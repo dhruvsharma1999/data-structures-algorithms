@@ -15,3 +15,22 @@ a linked list is a linear collection of data elements whose order is not given b
 
 ![LL image](/imgs/dll.png)
 
+### 3. [STACKS AND QUEUES](https://github.com/dhruvsharma1999/data-structures-algorithms/tree/main/stack_queues)
+
+1. Stacks - Stack A stack is a linear data structure in which elements can be inserted and deleted only from one side of the list, called the top. A stack follows the LIFO (Last In First Out) principle.
+
+2. Queue -  A queue is a linear data structure in which elements can be inserted only from one side of the list called rear, and the elements can be deleted only from the other side called the front. The queue data structure follows the FIFO (First In First Out) principle.
+
+![sandqimg](/imgs/sandq.png)
+
+### 4. [BINARY SEARCH TREE](https://github.com/dhruvsharma1999/data-structures-algorithms/tree/main/binary_tree)
+
+Binary Search Tree is a node-based binary tree data structure which has the following properties:
+
+-The left subtree of a node contains only nodes with keys lesser than the node’s key.
+
+-The right subtree of a node contains only nodes with keys greater than the node’s key.
+
+-The left and right subtree each must also be a binary search tree.
+
+![bst](/imgs/bst.png)

@@ -37,6 +37,5 @@ class ArrayQueue:
 
     def enqueue(self, e):
         """Add an element to the back of queue"""
-        if self._size == len(self._data);
-        e
-
+        if self._size == len(self._data)
+      

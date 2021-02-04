@@ -1,50 +1,71 @@
-#python function to illustrate the insert
-#operation in binary search tree
+#Python program, to demonstrate binary search tree, insertion and search operation 
 
-#Node class
+#Node class for creating a new node 
 class Node:
-    def __init__(self, key):
-        self.right = None
-        self.left = None
-        self.val = key
+    def __init__(self,data=None):
+        self.data = data
+        self.left = None 
+        self.right = None 
 
-#utility function to insert a new node with given key 
+#BST class 
+class BST:
+    def __init__ (self):
+        self.root = None
 
-def insert(root,key):
-    if root is None:
-        return Node(key)
-    else:
-        if root.val ==key:
-            return root
-        elif root.val < key:
-            root.right = insert(root.right, key)
+    def insert(self, data):
+        if self.root == None:
+            self.root = Node(data)
         else:
-            root.left = insert(root.left, key)
+            self._insert(data, self.root) 
 
-    return root
-    
-#utility function to do inorder traversal
+    def _insert(self, data, cur_node):
+        if data < cur_node.data:
+            if cur_node.left is None:
+                cur_node.left = Node(data) 
+            else:
+                self._insert(data, cur_node.left)
 
-def inorder(root):
-    if root:
-        inorder(root.left)
-        print(root.val)
-        inorder(root.right)
+        elif data > cur_node.data:
+            if cur_node.right == None:
+                cur_node.right = Node(data) 
+            else:
+                self._insert(data, cur_node.right)
+        else:
+            print("The value is already in the tree")
+
+   ##aply find and search method.
+    def find(self, data):
+        if self.root:
+            is_found = self._find(data, self.root)
+            if is_found:
+                return True
+            return False
+        else:
+            return None 
+        
+    #_find function to see if the value we are looking for is in the tree or not 
+    def _find(self, data, cur_node):
+        if data > cur_node.data and cur_node.right:
+            return self._find(data, cur_node.right)
+        elif data < cur_node.data and cur_node.left:
+            return self._find(data, cur_node.left)
+        if data == cur_node.data:
+            return True
 
 
-r = Node(50)
-r = insert(r, 30)
-r = insert(r, 20)
-r = insert(r, 40)
-r = insert(r, 70)
-r = insert(r, 60)
-r = insert(r, 80)
-
-inorder(r)
 
 
+bst = BST()
+bst.insert(2)
+bst.insert(4)
+bst.insert(8)
+bst.insert(5)
+bst.insert(10)
 
+print(bst.find(4))
+print(bst.find(5))
 
+print(bst.find(99))
 
 
 
